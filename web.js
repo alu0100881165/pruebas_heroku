@@ -78,7 +78,8 @@ app.get('/index', function(req, res){
 });
 
 app.get('/privada', auth, function(req, res){
-        res.render('privada', {title: 'Pagina Privada'});
+        //res.render('privada', {title: 'Pagina Privada'});
+        res.redirect('/gh-pages/index.html');
 });
 
 app.get('/logout', auth, function(req, res){
