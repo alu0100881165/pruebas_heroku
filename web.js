@@ -10,10 +10,11 @@ let router = express.Router();  //rutas
 
 //myserver_middleware.js
 
+
 module.exports = router;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.set('port', (process.env.PORT || 8080));
 let bcrypt = require("bcrypt-nodejs");
 let hash = bcrypt.hashSync("amyspassword");
 console.log(`amypassword hashed = ${hash}`);
@@ -98,11 +99,11 @@ app.post('/login', function(req, res){
 });
 
 //escuchar
-var server = app.listen(5000, function () {
+var server = app.listen(app.get('port'), function () {
 
   var host = server.address().address
   var port = server.address().port
 
   console.log('Example app listening at http://%s:%s', host, port)
 
-})
+});
