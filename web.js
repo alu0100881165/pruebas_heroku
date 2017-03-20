@@ -77,9 +77,9 @@ app.get('/index', function(req, res){
         res.render('index', {title: 'index'});
 });
 
-app.get('/privada', auth, function(req, res){
+app.get('/gh-pages/*?', auth, function(req, res){
         //res.render('privada', {title: 'Pagina Privada'});
-        res.redirect('/gh-pages/index.html');
+        //res.redirect('/gh-pages/index.html');
 });
 
 app.get('/logout', auth, function(req, res){
@@ -93,7 +93,7 @@ app.post('/login', function(req, res){
 //      if(req.body.username in users){
                 req.session.user = req.body.username;
                 req.session.admin = true;
-                res.redirect('/privada');
+                res.redirect('/gh-pages/index.html');
         }else{
                 res.send('Login incorrecto');
         }
