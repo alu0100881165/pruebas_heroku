@@ -77,11 +77,12 @@ app.get('/index', function(req, res){
         res.render('index', {title: 'index'});
 });
 
-app.get('/gh-pages/*?', auth, function(req, res){
-        //res.render('privada', {title: 'Pagina Privada'});
-        //res.redirect('/gh-pages/index.html');
+app.get('/content/*?', auth, function(req, res){
 });
 
+app.get('/privada', auth, function(req, res){
+        res.render('privada', {title: 'Pagina Privada'});
+});
 app.get('/logout', auth, function(req, res){
         delete req.session.user;
         res.redirect('/');
@@ -93,12 +94,12 @@ app.post('/login', function(req, res){
 //      if(req.body.username in users){
                 req.session.user = req.body.username;
                 req.session.admin = true;
-                res.redirect('/gh-pages/index.html');
+                res.redirect('/privada');
         }else{
                 res.send('Login incorrecto');
         }
 });
-
+app.use('/content', express.static(path.join(__dirname, 'public')));
 //escuchar
 var server = app.listen(app.get('port'), function () {
 
