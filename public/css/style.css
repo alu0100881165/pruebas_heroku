@@ -1,0 +1,35 @@
+body{
+	font-family: 'Vollkorn';
+	color: #222222;
+	background: url(http://www.phe.es/wp-content/uploads/2017/05/AgendaPHE2017.jpg);
+	text-align: center;
+	font-size: 25px;
+}
+
+.formulario{
+	font-family: 'Vollkorn';
+	text-align: left;
+	margin-left: 6cm;
+}
+
+input[type=text]{
+    font-size: 20px;
+}
+
+input[type=radio]{
+    margin-left: 1cm;
+}
+
+input[type=submit]{
+    font-size: 20px;
+}
+
+input[type=reset]{
+    font-size: 20px;
+}
+
+textarea{
+	font-size: 20px;
+    margin-left: 1cm;
+}
+
