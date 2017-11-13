@@ -2,7 +2,7 @@
 var express = require('express');
 //instanciar
 var app = express();
-var port = process.env.PORT || 8080;
+var port1 = process.env.PORT || 8080;
 
 //Archivos estaticos css, js, img, html
 app.use(express.static('.'));
@@ -13,7 +13,7 @@ res.sendfile(__dirname + '/index2.html');
 });
 
 //escuchar
-var server = app.listen(port, function(){
+var server = app.listen(port1, function(){
 
   var host = server.address().address
   var port = server.address().port
